@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/EmployeeManagement/custom_table.dart';
 import 'package:my_app/app_text.dart';
 import 'package:my_app/constants.dart';
 import 'package:my_app/extension.dart';
@@ -64,17 +65,54 @@ class _EmployeeManagementState extends State<EmployeeManagement> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            height: 25.sp,
-                            width: calcSize(context).longestSide,
-                            color: Colors.red,
+                            width: 50.sp,
+                            decoration: BoxDecoration(
+                                border: Border.all(),
+                                borderRadius: BorderRadius.circular(07.sp)),
+                            child: const UpdateProfileTextFormField(
+                              title: "Search",
+                              initialValue: "",
+                              enable: true,
+                            ),
                           ),
                           10.height,
-                          Expanded(
-                            child: Container(
-                              color: Colors.green,
-                            ),
+                          const CustomTable(
+                              datacolumns: ['Name', 'hello', 'bye']),
+                          10.height,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Container(
+                                height: 17.sp,
+                                width: 30.sp,
+                                decoration: BoxDecoration(
+                                    color: Colors.amber,
+                                    borderRadius: BorderRadius.circular(07.sp)),
+                                child: Center(
+                                  child: AppText.small(
+                                    "Prev",
+                                    fontSize: 11.sp,
+                                  ),
+                                ),
+                              ),
+                              10.width,
+                              Container(
+                                height: 17.sp,
+                                width: 30.sp,
+                                decoration: BoxDecoration(
+                                    color: Colors.amber,
+                                    borderRadius: BorderRadius.circular(07.sp)),
+                                child: Center(
+                                  child: AppText.small(
+                                    "Next",
+                                    fontSize: 11.sp,
+                                  ),
+                                ),
+                              )
+                            ],
                           )
                         ],
                       ).withPadding(padding: EdgeInsets.all(10.sp)),
