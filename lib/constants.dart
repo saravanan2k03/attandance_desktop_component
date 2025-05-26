@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:my_app/app_text.dart';
 import 'package:sizer/sizer.dart';
@@ -8,8 +6,8 @@ Size calcSize(context) {
   return MediaQuery.of(context).size;
 }
 
-class UpdateProfileTextFormField extends StatelessWidget {
-  const UpdateProfileTextFormField({
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({
     super.key,
     required this.title,
     required this.initialValue,
@@ -24,7 +22,6 @@ class UpdateProfileTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    log("ignorePointer :$enable");
     return TextFormField(
       enabled: enable,
       initialValue: initialValue,

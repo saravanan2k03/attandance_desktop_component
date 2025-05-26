@@ -72,7 +72,7 @@ class _EmployeeManagementState extends State<EmployeeManagement> {
                             decoration: BoxDecoration(
                                 border: Border.all(),
                                 borderRadius: BorderRadius.circular(07.sp)),
-                            child: const UpdateProfileTextFormField(
+                            child: const CustomTextFormField(
                               title: "Search",
                               initialValue: "",
                               enable: true,
