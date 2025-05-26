@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/constants.dart';
 
 class MyDropdown extends StatefulWidget {
   const MyDropdown({super.key});
