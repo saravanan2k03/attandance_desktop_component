@@ -43,6 +43,7 @@ class CustomBorderTextForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 50.sp,
+      height: 20.sp,
       decoration: BoxDecoration(
           border: Border.all(), borderRadius: BorderRadius.circular(07.sp)),
       child: const CustomTextFormField(
@@ -62,7 +63,7 @@ class CustomBorderDropDownForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50.sp,
+      height: 20.sp,
       decoration: BoxDecoration(
           border: Border.all(), borderRadius: BorderRadius.circular(07.sp)),
       child: const MyDropdown(),

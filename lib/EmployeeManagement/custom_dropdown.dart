@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/extension.dart';
+import 'package:sizer/sizer.dart';
 
 class MyDropdown extends StatefulWidget {
   const MyDropdown({super.key});
@@ -21,7 +23,14 @@ class MyDropdownState extends State<MyDropdown> {
   @override
   Widget build(BuildContext context) {
     return DropdownMenu<String>(
+      width: 50.sp,
       initialSelection: _selectedItem,
+      inputDecorationTheme: const InputDecorationTheme(
+        enabledBorder: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        errorBorder: InputBorder.none,
+        disabledBorder: InputBorder.none,
+      ),
       dropdownMenuEntries:
           _dropdownItems.map<DropdownMenuEntry<String>>((String value) {
         return DropdownMenuEntry<String>(
@@ -35,6 +44,6 @@ class MyDropdownState extends State<MyDropdown> {
         });
       },
       hintText: "",
-    );
+    ).withPadding(padding: EdgeInsets.only(left: 05.sp));
   }
 }

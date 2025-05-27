@@ -52,16 +52,30 @@ class EmployeeDetails extends StatelessWidget {
                     ),
                   ),
                   15.height,
-                  Row(
-                    children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(07.sp),
+                            ),
+                          ),
                         ),
-                      ),
-                      Container(),
-                      Container(),
-                    ],
+                        07.width,
+                        Expanded(
+                          flex: 10,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(07.sp),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ).withPadding(

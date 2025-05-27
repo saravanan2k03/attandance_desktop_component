@@ -68,6 +68,7 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Wrap(
+                            spacing: 07.sp,
                             children: [
                               Chip(
                                 label: AppText.small(
@@ -75,8 +76,16 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
                                   fontSize: 17,
                                 ),
                               ),
+                              Chip(
+                                label: AppText.small(
+                                  "Address",
+                                  fontSize: 17,
+                                ),
+                              ),
                             ],
                           ),
+                          10.height,
+                          const ProfileUpload(),
                           15.height,
                           const Expanded(
                             child: SingleChildScrollView(
@@ -133,6 +142,42 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ProfileUpload extends StatelessWidget {
+  const ProfileUpload({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Stack(
+          children: [
+            CircleAvatar(
+              radius: 70,
+            ),
+            Positioned(
+              bottom: 2,
+              right: 2,
+              child: CircleAvatar(
+                backgroundColor: Colors.grey,
+                radius: 20,
+                child: Center(
+                  child: Icon(
+                    Icons.camera_alt_rounded,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            )
+          ],
+        )
+      ],
     );
   }
 }
