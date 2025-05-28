@@ -51,9 +51,12 @@ class CustomTable extends StatelessWidget {
           onTap: () {
             log(column);
           },
-          child: Text(
-            column,
-            style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.normal),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Text(
+              column,
+              style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.normal),
+            ),
           ),
         ),
       );

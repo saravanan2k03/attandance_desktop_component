@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/EmployeeManagement/custom_table.dart';
+import 'package:my_app/EmployeeManagement/employee_info_card.dart';
+import 'package:my_app/EmployeeManagement/employee_tabbar.dart';
 import 'package:my_app/app_text.dart';
 import 'package:my_app/constants.dart';
 import 'package:my_app/extension.dart';
@@ -55,98 +58,62 @@ class EmployeeDetails extends StatelessWidget {
                   Expanded(
                     child: Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                           flex: 2,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(07.sp),
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              spacing: 07.sp,
-                              children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 15.sp,
-                                    ).withPadding(
-                                        padding: EdgeInsets.only(top: 07.sp)),
-                                    10.width,
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          AppText.small(
-                                            "Saravanan",
-                                            textOverflow: TextOverflow.ellipsis,
-                                            fontSize: 18,
-                                          ),
-                                          AppText.small(
-                                            "Software Developer",
-                                            textOverflow: TextOverflow.ellipsis,
-                                            fontSize: 18,
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                10.height,
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    AppText.medium(
-                                      "Info",
-                                      fontSize: 18,
-                                    ),
-                                    const EmployeeBasicCards(
-                                      label: "Department",
-                                      data: "Software",
-                                      customIcon:
-                                          Icon(Icons.work_outline_rounded),
-                                    ).withPadding(
-                                        padding: EdgeInsets.only(top: 07.sp)),
-                                    const EmployeeBasicCards(
-                                      label: "Department",
-                                      data: "Software",
-                                      customIcon:
-                                          Icon(Icons.work_outline_rounded),
-                                    ).withPadding(
-                                        padding: EdgeInsets.only(top: 07.sp)),
-                                    const EmployeeBasicCards(
-                                      label: "Department",
-                                      data: "Software",
-                                      customIcon:
-                                          Icon(Icons.work_outline_rounded),
-                                    ).withPadding(
-                                        padding: EdgeInsets.only(top: 07.sp)),
-                                  ],
-                                )
-                              ],
-                            ).withPadding(
-                                padding:
-                                    EdgeInsets.symmetric(horizontal: 07.sp)),
-                          ),
+                          child: EmployeeInfoCard(),
                         ),
                         07.width,
                         Expanded(
                           flex: 10,
                           child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(07.sp),
-                            ),
-                            child: Column(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(),
-                                )
-                              ],
-                            ),
-                          ),
+                              height: calcSize(context).longestSide,
+                              width: calcSize(context).longestSide,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(07.sp),
+                              ),
+                              child: Column(
+                                children: [
+                                  const EmployeeTabbar(),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        const LeaveRequestFilter(),
+                                        Expanded(
+                                          flex: 5,
+                                          child: Row(
+                                            children: [
+                                              Expanded(
+                                                flex: 8,
+                                                child: Container(
+                                                  color: Colors.amber,
+                                                ),
+                                              ),
+                                              Expanded(
+                                                flex: 2,
+                                                child: Container(
+                                                  color:
+                                                      const Color(0xffd0e1f8),
+                                                  child: const Column(
+                                                    children: [
+                                                      CustomTable(datacolumns: [
+                                                        'Id',
+                                                        'Leave Category',
+                                                        'bye'
+                                                      ]),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ).withPadding(
+                                        padding: EdgeInsets.all(07.sp)),
+                                  )
+                                ],
+                              )),
                         ),
                       ],
                     ),
@@ -163,47 +130,44 @@ class EmployeeDetails extends StatelessWidget {
   }
 }
 
-class EmployeeBasicCards extends StatelessWidget {
-  final String label;
-  final String data;
-  final Icon customIcon;
-  const EmployeeBasicCards({
+class LeaveRequestFilter extends StatelessWidget {
+  const LeaveRequestFilter({
     super.key,
-    required this.label,
-    required this.data,
-    required this.customIcon,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            color: const Color(0xfff5f5f5),
-            borderRadius: BorderRadius.circular(05.sp),
+    return Expanded(
+      flex: 2,
+      child: Column(
+        children: [
+          Expanded(
+            child: Container(
+              color: Colors.blue,
+            ),
           ),
-          child: customIcon.withPadding(padding: EdgeInsets.all(07.sp)),
-        ),
-        10.width,
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppText.medium(
-                data,
-                textOverflow: TextOverflow.ellipsis,
-                fontSize: 17,
-              ),
-              AppText.small(
-                label,
-                textOverflow: TextOverflow.ellipsis,
-                fontSize: 17,
-              ),
-            ],
+          Container(
+            color: Colors.green,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.circular(07.sp),
+                  ),
+                  child: AppText.small(
+                    "Request",
+                    fontSize: 18,
+                  ).withPadding(
+                    padding: EdgeInsets.all(07.sp),
+                  ),
+                ),
+              ],
+            ),
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }
