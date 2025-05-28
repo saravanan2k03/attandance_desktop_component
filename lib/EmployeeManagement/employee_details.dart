@@ -62,6 +62,73 @@ class EmployeeDetails extends StatelessWidget {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(07.sp),
                             ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              spacing: 07.sp,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 15.sp,
+                                    ).withPadding(
+                                        padding: EdgeInsets.only(top: 07.sp)),
+                                    10.width,
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          AppText.small(
+                                            "Saravanan",
+                                            textOverflow: TextOverflow.ellipsis,
+                                            fontSize: 18,
+                                          ),
+                                          AppText.small(
+                                            "Software Developer",
+                                            textOverflow: TextOverflow.ellipsis,
+                                            fontSize: 18,
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                10.height,
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    AppText.medium(
+                                      "Info",
+                                      fontSize: 18,
+                                    ),
+                                    const EmployeeBasicCards(
+                                      label: "Department",
+                                      data: "Software",
+                                      customIcon:
+                                          Icon(Icons.work_outline_rounded),
+                                    ).withPadding(
+                                        padding: EdgeInsets.only(top: 07.sp)),
+                                    const EmployeeBasicCards(
+                                      label: "Department",
+                                      data: "Software",
+                                      customIcon:
+                                          Icon(Icons.work_outline_rounded),
+                                    ).withPadding(
+                                        padding: EdgeInsets.only(top: 07.sp)),
+                                    const EmployeeBasicCards(
+                                      label: "Department",
+                                      data: "Software",
+                                      customIcon:
+                                          Icon(Icons.work_outline_rounded),
+                                    ).withPadding(
+                                        padding: EdgeInsets.only(top: 07.sp)),
+                                  ],
+                                )
+                              ],
+                            ).withPadding(
+                                padding:
+                                    EdgeInsets.symmetric(horizontal: 07.sp)),
                           ),
                         ),
                         07.width,
@@ -71,6 +138,13 @@ class EmployeeDetails extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(07.sp),
+                            ),
+                            child: Column(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(),
+                                )
+                              ],
                             ),
                           ),
                         ),
@@ -85,6 +159,51 @@ class EmployeeDetails extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class EmployeeBasicCards extends StatelessWidget {
+  final String label;
+  final String data;
+  final Icon customIcon;
+  const EmployeeBasicCards({
+    super.key,
+    required this.label,
+    required this.data,
+    required this.customIcon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: const Color(0xfff5f5f5),
+            borderRadius: BorderRadius.circular(05.sp),
+          ),
+          child: customIcon.withPadding(padding: EdgeInsets.all(07.sp)),
+        ),
+        10.width,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppText.medium(
+                data,
+                textOverflow: TextOverflow.ellipsis,
+                fontSize: 17,
+              ),
+              AppText.small(
+                label,
+                textOverflow: TextOverflow.ellipsis,
+                fontSize: 17,
+              ),
+            ],
+          ),
+        )
+      ],
     );
   }
 }
