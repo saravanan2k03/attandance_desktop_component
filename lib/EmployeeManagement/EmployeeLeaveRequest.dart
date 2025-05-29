@@ -18,7 +18,6 @@ class EmployeeLeaveRequest extends StatelessWidget {
         children: [
           const LeaveRequestFilter(),
           Expanded(
-            flex: 5,
             child: Row(
               children: [
                 Expanded(

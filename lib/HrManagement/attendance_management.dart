@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/EmployeeManagement/employee_info_card.dart';
 import 'package:my_app/EmployeeManagement/employee_tabbar.dart';
+import 'package:my_app/HrManagement/device_info.dart';
+import 'package:my_app/HrManagement/hr_tabbar.dart';
 import 'package:my_app/app_text.dart';
 import 'package:my_app/constants.dart';
 import 'package:my_app/extension.dart';
 import 'package:sizer/sizer.dart';
 
-class EmployeeDetails extends StatelessWidget {
-  const EmployeeDetails({super.key});
+class AttendanceManagement extends StatelessWidget {
+  const AttendanceManagement({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class EmployeeDetails extends StatelessWidget {
                         Row(
                           children: [
                             AppText.small(
-                              "Employee Management",
+                              "HR Management",
                               fontSize: 18,
                             ),
                             07.sp.width,
@@ -40,13 +41,13 @@ class EmployeeDetails extends StatelessWidget {
                             ),
                             07.sp.width,
                             AppText.small(
-                              "Employee Details",
+                              "Attendance Details",
                               fontSize: 18,
                             ),
                           ],
                         ),
                         AppText.medium(
-                          "Employee Details",
+                          "Attendance Details",
                           fontSize: 18,
                         ),
                         07.sp.width,
@@ -59,7 +60,7 @@ class EmployeeDetails extends StatelessWidget {
                       children: [
                         const Expanded(
                           flex: 2,
-                          child: EmployeeInfoCard(),
+                          child: DeviceInfoCard(),
                         ),
                         07.width,
                         Expanded(
@@ -71,33 +72,9 @@ class EmployeeDetails extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(07.sp),
                               ),
-                              child: Column(
+                              child: const Column(
                                 children: [
-                                  const EmployeeTabbar(),
-                                  // EmployeeLeaveRequest(),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Column(
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                AppText.medium(
-                                                  "Personal Details",
-                                                  fontSize: 17,
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ).withPadding(
-                                        padding: EdgeInsets.all(07.sp)),
-                                  )
+                                  HrTabbar(),
                                 ],
                               )),
                         ),
