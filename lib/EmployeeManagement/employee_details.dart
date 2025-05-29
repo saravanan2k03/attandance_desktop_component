@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/EmployeeManagement/custom_table.dart';
+import 'package:my_app/EmployeeManagement/EmployeeLeaveRequest.dart';
 import 'package:my_app/EmployeeManagement/employee_info_card.dart';
 import 'package:my_app/EmployeeManagement/employee_tabbar.dart';
 import 'package:my_app/app_text.dart';
@@ -72,46 +72,10 @@ class EmployeeDetails extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(07.sp),
                               ),
-                              child: Column(
+                              child: const Column(
                                 children: [
-                                  const EmployeeTabbar(),
-                                  Expanded(
-                                    child: Column(
-                                      children: [
-                                        const LeaveRequestFilter(),
-                                        Expanded(
-                                          flex: 5,
-                                          child: Row(
-                                            children: [
-                                              Expanded(
-                                                flex: 8,
-                                                child: Container(
-                                                  color: Colors.amber,
-                                                ),
-                                              ),
-                                              Expanded(
-                                                flex: 2,
-                                                child: Container(
-                                                  color:
-                                                      const Color(0xffd0e1f8),
-                                                  child: const Column(
-                                                    children: [
-                                                      CustomTable(datacolumns: [
-                                                        'Id',
-                                                        'Leave Category',
-                                                        'bye'
-                                                      ]),
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ).withPadding(
-                                        padding: EdgeInsets.all(07.sp)),
-                                  )
+                                  EmployeeTabbar(),
+                                  EmployeeLeaveRequest(),
                                 ],
                               )),
                         ),
@@ -122,48 +86,6 @@ class EmployeeDetails extends StatelessWidget {
               ).withPadding(
                 padding: EdgeInsets.all(10.sp),
               ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class LeaveRequestFilter extends StatelessWidget {
-  const LeaveRequestFilter({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      flex: 2,
-      child: Column(
-        children: [
-          Expanded(
-            child: Container(
-              color: Colors.blue,
-            ),
-          ),
-          Container(
-            color: Colors.green,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(07.sp),
-                  ),
-                  child: AppText.small(
-                    "Request",
-                    fontSize: 18,
-                  ).withPadding(
-                    padding: EdgeInsets.all(07.sp),
-                  ),
-                ),
-              ],
             ),
           ),
         ],

@@ -46,13 +46,12 @@ class CustomTable extends StatelessWidget {
     return columns.map((String column) {
       return DataColumn(
         // numeric: true,
-        label: InkWell(
-          onHover: (value) {},
-          onTap: () {
-            log(column);
-          },
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
+        label: Expanded(
+          child: InkWell(
+            onHover: (value) {},
+            onTap: () {
+              log(column);
+            },
             child: Text(
               column,
               style: TextStyle(fontSize: 11.sp, fontWeight: FontWeight.normal),
