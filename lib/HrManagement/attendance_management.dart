@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/EmployeeManagement/employee_tabbar.dart';
 import 'package:my_app/HrManagement/device_info.dart';
 import 'package:my_app/HrManagement/hr_tabbar.dart';
 import 'package:my_app/app_text.dart';
@@ -72,9 +71,28 @@ class AttendanceManagement extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(07.sp),
                               ),
-                              child: const Column(
+                              child: Column(
                                 children: [
-                                  HrTabbar(),
+                                  const HrTabbar(),
+                                  Expanded(
+                                    child: Column(
+                                      children: [
+                                        Expanded(
+                                          flex: 2,
+                                          child: Container(
+                                            color: Colors.blue,
+                                          ),
+                                        ),
+                                        Expanded(
+                                          flex: 10,
+                                          child: Container(
+                                            color: Colors.red,
+                                          ),
+                                        ),
+                                      ],
+                                    ).withPadding(
+                                        padding: EdgeInsets.all(07.sp)),
+                                  )
                                 ],
                               )),
                         ),

@@ -53,7 +53,7 @@ class TabbarCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: cardenable ? const Color(0xffd1e4ff) : null,
-        borderRadius: BorderRadius.circular(05.sp),
+        borderRadius: BorderRadius.circular(07.sp),
       ),
       child: AppText.small(
         label,

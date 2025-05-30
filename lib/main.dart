@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/EmployeeManagement/employee_details.dart';
 import 'package:my_app/HrManagement/attendance_management.dart';
 import 'package:sizer/sizer.dart';
 
