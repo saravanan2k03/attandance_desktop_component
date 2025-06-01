@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/EmployeeManagement/filling_form.dart';
+import 'package:my_app/EmployeeManagement/employee_personal_details.dart';
+import 'package:my_app/EmployeeManagement/employee_profile_details.dart';
 import 'package:my_app/app_text.dart';
 import 'package:my_app/constants.dart';
 import 'package:my_app/extension.dart';
@@ -67,32 +68,16 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Wrap(
-                            spacing: 07.sp,
-                            children: [
-                              Chip(
-                                label: AppText.small(
-                                  "Personal Information",
-                                  fontSize: 17,
-                                ),
-                              ),
-                              Chip(
-                                label: AppText.small(
-                                  "Address",
-                                  fontSize: 17,
-                                ),
-                              ),
-                            ],
-                          ),
                           10.height,
                           const ProfileUpload(),
                           15.height,
-                          const Expanded(
+                          Expanded(
                             child: SingleChildScrollView(
                               child: Column(
                                 children: [
-                                  FillingForm(),
-                                  FillingForm(),
+                                  const EmployeePersonalDetails(),
+                                  10.height,
+                                  const EmployeeProfileDetails(),
                                 ],
                               ),
                             ),
@@ -106,29 +91,29 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Container(
-                        height: 17.sp,
+                        height: 20.sp,
                         width: 30.sp,
                         decoration: BoxDecoration(
-                            color: Colors.amber,
+                            color: Colors.red,
                             borderRadius: BorderRadius.circular(07.sp)),
                         child: Center(
                           child: AppText.small(
-                            "Prev",
-                            fontSize: 11.sp,
+                            "Clear",
+                            fontSize: 17,
                           ),
                         ),
                       ),
                       10.width,
                       Container(
-                        height: 17.sp,
+                        height: 20.sp,
                         width: 30.sp,
                         decoration: BoxDecoration(
-                            color: Colors.amber,
+                            color: Colors.amberAccent,
                             borderRadius: BorderRadius.circular(07.sp)),
                         child: Center(
                           child: AppText.small(
-                            "Next",
-                            fontSize: 11.sp,
+                            "Submit",
+                            fontSize: 17,
                           ),
                         ),
                       )

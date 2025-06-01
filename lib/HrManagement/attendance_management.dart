@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/HrManagement/device_info.dart';
 import 'package:my_app/HrManagement/hr_tabbar.dart';
+import 'package:my_app/HrManagement/payroll_details_card.dart';
 import 'package:my_app/app_text.dart';
 import 'package:my_app/constants.dart';
 import 'package:my_app/extension.dart';
@@ -22,7 +23,6 @@ class AttendanceManagement extends StatelessWidget {
                   SizedBox(
                     // height: 35.sp,
                     width: calcSize(context).longestSide,
-                    // color: Colors.red,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -71,28 +71,10 @@ class AttendanceManagement extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(07.sp),
                               ),
-                              child: Column(
+                              child: const Column(
                                 children: [
-                                  const HrTabbar(),
-                                  Expanded(
-                                    child: Column(
-                                      children: [
-                                        Expanded(
-                                          flex: 2,
-                                          child: Container(
-                                            color: Colors.blue,
-                                          ),
-                                        ),
-                                        Expanded(
-                                          flex: 10,
-                                          child: Container(
-                                            color: Colors.red,
-                                          ),
-                                        ),
-                                      ],
-                                    ).withPadding(
-                                        padding: EdgeInsets.all(07.sp)),
-                                  )
+                                  HrTabbar(),
+                                  PayrollDetailsCard(),
                                 ],
                               )),
                         ),

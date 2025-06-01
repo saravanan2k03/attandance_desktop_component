@@ -14,7 +14,7 @@ class EmployeeLeaveRequest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
-        spacing: 07.sp,
+        // spacing: 07.sp,
         children: [
           const LeaveRequestFilter(),
           Expanded(

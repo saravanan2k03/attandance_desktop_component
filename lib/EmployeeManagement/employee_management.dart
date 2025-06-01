@@ -24,9 +24,7 @@ class _EmployeeManagementState extends State<EmployeeManagement> {
               child: Column(
                 children: [
                   SizedBox(
-                    // height: 35.sp,
                     width: calcSize(context).longestSide,
-                    // color: Colors.red,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

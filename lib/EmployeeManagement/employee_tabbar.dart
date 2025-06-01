@@ -16,9 +16,9 @@ class EmployeeTabbar extends StatelessWidget {
           decoration: BoxDecoration(
               color: const Color(0xfff5f5f5),
               borderRadius: BorderRadius.circular(07.sp)),
-          child: Row(
-            spacing: 07.sp,
-            children: const [
+          child: const Row(
+            // spacing: 07.sp,
+            children: [
               TabbarCard(
                 cardenable: true,
                 label: "Employee Dashboard",

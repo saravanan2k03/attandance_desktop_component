@@ -29,13 +29,12 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         label: AppText.small(
           title,
-          fontSize: 11.sp,
+          fontSize: 17,
         ),
-        border: InputBorder.none,
-        focusedBorder: InputBorder.none,
-        enabledBorder: InputBorder.none,
-        errorBorder: InputBorder.none,
-        disabledBorder: InputBorder.none,
+        enabledBorder: const OutlineInputBorder(),
+        focusedBorder: const OutlineInputBorder(),
+        errorBorder: const OutlineInputBorder(),
+        disabledBorder: const OutlineInputBorder(),
 
         // fillColor: Colors.white,
         contentPadding: EdgeInsets.symmetric(

@@ -19,7 +19,7 @@ class EmployeeInfoCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        spacing: 07.sp,
+        // spacing: 07.sp,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,

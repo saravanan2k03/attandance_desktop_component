@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/extension.dart';
 import 'package:sizer/sizer.dart';
 
 class MyDropdown extends StatefulWidget {
-  const MyDropdown({super.key});
+  final String? hintText;
+  const MyDropdown({super.key, this.hintText});
 
   @override
   MyDropdownState createState() => MyDropdownState();
@@ -26,10 +26,10 @@ class MyDropdownState extends State<MyDropdown> {
       width: 50.sp,
       initialSelection: _selectedItem,
       inputDecorationTheme: const InputDecorationTheme(
-        enabledBorder: InputBorder.none,
-        focusedBorder: InputBorder.none,
-        errorBorder: InputBorder.none,
-        disabledBorder: InputBorder.none,
+        enabledBorder: OutlineInputBorder(),
+        focusedBorder: OutlineInputBorder(),
+        errorBorder: OutlineInputBorder(),
+        disabledBorder: OutlineInputBorder(),
       ),
       dropdownMenuEntries:
           _dropdownItems.map<DropdownMenuEntry<String>>((String value) {
@@ -43,7 +43,8 @@ class MyDropdownState extends State<MyDropdown> {
           _selectedItem = newValue;
         });
       },
-      hintText: "",
-    ).withPadding(padding: EdgeInsets.only(left: 05.sp));
+      enableSearch: false,
+      hintText: widget.hintText ?? "",
+    );
   }
 }

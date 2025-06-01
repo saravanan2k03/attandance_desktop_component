@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/HrManagement/attendance_management.dart';
+import 'package:my_app/EmployeeManagement/add_employee_data.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: const AttendanceManagement(),
+        home: const AddEmployeeData(),
       );
     });
   }
