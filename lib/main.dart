@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/AttendanceGenerated/attendance_ui.dart';
 import 'package:my_app/EmployeeManagement/add_employee_data.dart';
+import 'package:my_app/models/attendance_list.dart';
+import 'package:my_app/models/mock_json.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -12,6 +15,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+      // final attendanceList = AttendanceListModel.fromJson(mockAttendanceJson);
+
     return Sizer(builder: (concontext, orientation, screenTypetext) {
       return MaterialApp(
         title: 'Sree',
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: const AddEmployeeData(),
+        home:  AttendancePdfScreen(attendanceData: mockAttendanceData, organizationName: "Saravanan",),
       );
     });
   }
